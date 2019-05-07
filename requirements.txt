@@ -6,10 +6,12 @@ autopep8==1.4.4
 backports.functools-lru-cache==1.5
 backports.shutil-get-terminal-size==1.0.0
 bandit==1.5.1
+bcrypt==3.1.6
 billiard==3.6.0.0
 Brotli==1.0.7
 celery==4.3.0
 certifi==2019.3.9
+cffi==1.12.3
 chardet==3.0.4
 configparser==3.7.4
 coverage==4.5.3
@@ -61,6 +63,7 @@ py-spy==0.1.10
 pyactiveresource==2.1.2
 pycallgraph==1.0.1
 pycodestyle==2.5.0
+pycparser==2.19
 pyflakes==2.1.1
 Pygments==2.3.1
 pylint==1.9.4
