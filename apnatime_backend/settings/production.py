@@ -2,7 +2,7 @@ from apnatime_backend.settings.common import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['demo-apnatime.herokuapp.com']
 
 DATABASES = {
     'default': {

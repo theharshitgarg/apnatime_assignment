@@ -4,7 +4,7 @@ DEBUG = True
 
 # Last entry for teting purpose
 # TODO : REMOVE BEFORE PRODUCTION
-ALLOWED_HOSTS = ['common-workspace-harshitgarg.c9users.io', 'localhost']
+ALLOWED_HOSTS = ['common-workspace-harshitgarg.c9users.io', 'localhost', 'demo-apnatime.herokuapp.com']
 
 DATABASES = {
     'default': {
