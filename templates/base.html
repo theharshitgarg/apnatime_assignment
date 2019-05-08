@@ -30,6 +30,9 @@
 	                    <li class="page-scroll">
 	                        <a href="/admin/login">Admin<i class="fa fa-sign-in" aria-hidden="true"></i></a>
 						</li>
+						<li class="page-scroll">
+							<a href="{% url 'user_search' %}">Search</a>
+						</li>
 						{% if user.is_authenticated %}
 							<li class="page-scroll">
 								<a href="{% url 'logout' %}">Logout</a>
