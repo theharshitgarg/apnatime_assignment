@@ -19,7 +19,7 @@ def signup(request):
                 request,
                 messages.SUCCESS,
                 'Signup successfully. Please login.')
-            redirect('home')
+            return redirect('home')
         else:
             print(form.errors)
             messages.add_message(
