@@ -23,3 +23,7 @@ Due to time constraints, the following are in the fu
 
 
 
+# Useful credentials
+Admin user:
+	- username: admin_user
+	- password: admin123123
