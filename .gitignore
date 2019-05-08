@@ -96,5 +96,7 @@ env.bak/
 venv.bak/
 
 
+# temp
 
+temp/
 
