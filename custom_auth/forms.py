@@ -21,12 +21,13 @@ class SignUpForm(UserCreationForm):
         widget=forms.widgets.DateInput(
             format="%m/%d/%Y"),
         help_text='Format mm/dd/YYYY')
+    avatar = forms.ImageField()
 
     class Meta:
         model = User
         fields = (
             'username', 'password1', 'password2', 'email', 'first_name', 'last_name',
-            'address', 'preferred_language', 'date_of_birth'
+            'address', 'preferred_language', 'date_of_birth', 'avatar'
         )
 
 

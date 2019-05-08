@@ -29,7 +29,7 @@
           {% for d in data.qs %}
             <tr>
               <td>{{ d.id }}</td>
-              <td>{{ d.get_full_name }}</td>
+              <td>{{ d.get_full_name | title }}</td>
               <td>{{ d.email }}</td>
             </tr>
             <p></p>

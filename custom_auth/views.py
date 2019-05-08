@@ -13,7 +13,7 @@ from custom_auth.forms import SignUpForm
 def signup(request):
 
     if request.method == "POST":
-        form = SignUpForm(request.POST)
+        form = SignUpForm(request.POST, request.FILES)
 
         if form.is_valid():
             form.save()
