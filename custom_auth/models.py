@@ -19,7 +19,7 @@ class User(AbstractUser):
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
     address = models.CharField(max_length=500)
     preferred_language = models.CharField(max_length=50)
- 
+
     def get_full_name(self):
         '''
         Returns the first_name plus the last_name, with a space in between.

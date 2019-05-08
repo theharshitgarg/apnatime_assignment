@@ -6,5 +6,5 @@ from . import views
 
 urlpatterns = [
     url(r'^singup', views.signup, name='signup'),
-    
+
 ]
