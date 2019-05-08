@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'crispy_forms'
 ]
 
 AUTH_USER_MODEL = 'custom_auth.User'
@@ -143,3 +145,5 @@ sentry_sdk.init(
     dsn=os.environ['SENTRY_DSN'],
     integrations=[DjangoIntegration()]
 )
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
