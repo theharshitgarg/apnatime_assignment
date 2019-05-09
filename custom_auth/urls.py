@@ -7,5 +7,7 @@ urlpatterns = [
     url(r'^search', views.user_list, name='user_search'),
 
     # APIS
-    url(r'^api/v1/users/search', views.UsersListView.as_view(), name='api_user_search'),
+    url(r'^api/v1/users/search',
+        views.UsersListView.as_view(),
+        name='api_user_search'),
 ]

@@ -36,7 +36,6 @@ def signup(request):
     return render(request, 'custom_auth/signup.html', kwargs)
 
 
-
 def user_list(request):
     data = UserFilter(request.GET, queryset=models.User.objects.all())
 
@@ -48,6 +47,12 @@ class UsersListView(generics.ListAPIView):
     queryset = models.User.objects.all()
     serializer_class = UserSerializer
     filter_backends = (filters.OrderingFilter, filters.SearchFilter)
-    ordering_fields = '__all__'
+    search_fields = (
+        'username',
+        'email',
+        'first_name',
+        'last_name',
+        'id',
+        'date_of_birth')
+    ordering_fields = search_fields
     ordering = ('id',)
-    search_fields = ('username', 'email', 'first_name', 'last_name', 'id', 'date_of_birth')
