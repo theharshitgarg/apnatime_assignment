@@ -3,11 +3,13 @@ from __future__ import unicode_literals
 
 from django.contrib import messages
 from django.shortcuts import redirect, render
+from rest_framework import filters, generics
 
 from custom_auth import models
 from custom_auth.filters import UserFilter
 # Create your views here.
 from custom_auth.forms import SignUpForm
+from custom_auth.serializers import UserSerializer
 
 
 def signup(request):
@@ -40,3 +42,12 @@ def user_list(request):
 
     kwargs = locals()
     return render(request, 'custom_auth/filter.html', kwargs)
+
+
+class UsersListView(generics.ListAPIView):
+    queryset = models.User.objects.all()
+    serializer_class = UserSerializer
+    filter_backends = (filters.OrderingFilter, filters.SearchFilter)
+    ordering_fields = '__all__'
+    ordering = ('id',)
+    search_fields = ('username', 'email', 'first_name', 'last_name', 'id', 'date_of_birth')
