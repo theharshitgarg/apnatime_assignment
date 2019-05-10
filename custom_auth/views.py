@@ -13,6 +13,7 @@ from custom_auth.serializers import UserSerializer
 
 
 def signup(request):
+    """Allows a user to signup as a normal user."""
 
     if request.method == "POST":
         form = SignUpForm(request.POST, request.FILES)
@@ -37,6 +38,7 @@ def signup(request):
 
 
 def user_list(request):
+    """HTML view for users list along with filters."""
     data = UserFilter(request.GET, queryset=models.User.objects.all())
 
     kwargs = locals()
@@ -44,6 +46,7 @@ def user_list(request):
 
 
 class UsersListView(generics.ListAPIView):
+    """API view for users list."""
     queryset = models.User.objects.all()
     serializer_class = UserSerializer
     filter_backends = (filters.OrderingFilter, filters.SearchFilter)

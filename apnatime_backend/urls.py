@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf import settings
 
 from apnatime_backend import views
 
@@ -26,4 +28,4 @@ urlpatterns = [
     url(r'^logout/$', views.main_logout, name='logout'),
 
     url(r'^accounts/', include('custom_auth.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
