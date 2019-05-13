@@ -20,17 +20,13 @@ def signup(request):
 
         if form.is_valid():
             form.save()
-            messages.add_message(
-                request,
-                messages.SUCCESS,
-                'Signup successfully. Please login.')
+            messages.add_message(request, messages.SUCCESS,
+                                 'Signup successfully. Please login.')
             return redirect('home')
         else:
             print(form.errors)
-            messages.add_message(
-                request,
-                messages.ERROR,
-                'Error. Please ensure data is correct.')
+            messages.add_message(request, messages.ERROR,
+                                 'Error. Please ensure data is correct.')
 
     form = SignUpForm()
     kwargs = locals()
@@ -50,12 +46,7 @@ class UsersListView(generics.ListAPIView):
     queryset = models.User.objects.all()
     serializer_class = UserSerializer
     filter_backends = (filters.OrderingFilter, filters.SearchFilter)
-    search_fields = (
-        'username',
-        'email',
-        'first_name',
-        'last_name',
-        'id',
-        'date_of_birth')
+    search_fields = ('username', 'email', 'first_name', 'last_name', 'id',
+                     'date_of_birth')
     ordering_fields = search_fields
-    ordering = ('id',)
+    ordering = ('id', )

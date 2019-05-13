@@ -1,3 +1,4 @@
+"""URLS for custom auth"""
 from django.conf.urls import url
 
 from . import views
