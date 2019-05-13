@@ -7,31 +7,32 @@ from . forms import LoginForm
 
 
 def home(request):
-	return render(request, 'home.html')
+    return render(request, 'home.html')
 
 
 @require_http_methods(['GET', 'POST'])
 def main_login(request):
-	if request.method == "POST":
-		login_form = LoginForm(request.POST)
-		if login_form.is_valid():
-			username = login_form.cleaned_data['username']
-			password = login_form.cleaned_data['password']
-			user = authenticate(username=username, password=password)
-			if user is not None:
-				login(request, user)
-				messages.add_message(request, messages.SUCCESS, 'Successfully logged in.')
+    if request.method == "POST":
+        login_form = LoginForm(request.POST)
+        if login_form.is_valid():
+            username = login_form.cleaned_data['username']
+            password = login_form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.add_message(
+                    request, messages.SUCCESS, 'Successfully logged in.')
 
-				return redirect('home')
-			else:
-				return redirect('login')
+                return redirect('home')
+            else:
+                return redirect('login')
 
-	kwargs = locals()
-	return render(request, "login.html", kwargs)
+    kwargs = locals()
+    return render(request, "login.html", kwargs)
 
 
 def main_logout(request):
-	logout(request)
-	messages.add_message(request, messages.SUCCESS, 'Successfully logout')
+    logout(request)
+    messages.add_message(request, messages.SUCCESS, 'Successfully logout')
 
-	return redirect('home')
+    return redirect('home')
